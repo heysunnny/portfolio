@@ -1,0 +1,1124 @@
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Montserrat", "NanumSquare", sans-serif;
+  font-size: 16px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/////////////////////////////////////////////////
+
+.d-flex {
+  display: flex;
+}
+
+/////////////////////////////////////////////////
+
+header {
+  width: 100%;
+  height: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+  z-index: 99;
+  &:hover {
+    height: 80px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  ul {
+    overflow: hidden;
+    margin-left: 70%;
+    li {
+      float: left;
+      margin: 0 5%;
+      text-align: center;
+      a {
+        display: block;
+        font-size: calc(12px + 0.3vw);
+        font-weight: 600;
+        line-height: 80px;
+        color: #000;
+        opacity: 0.3;
+
+        &:hover,
+        &.on {
+          color: #000;
+          opacity: 1;
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      margin-left: 55%;
+    }
+  }
+}
+
+.wrapper-menu {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 330ms ease-out;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  display: none;
+  &.open {
+    transform: rotate(-45deg);
+  }
+}
+.line-menu {
+  width: 100%;
+  height: 4px;
+  /* background-color: #555; */
+  border: 1px solid #555;
+  border-radius: 10px;
+  &.half {
+    width: 50%;
+  }
+  &.end {
+    align-self: flex-end;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: left;
+  }
+}
+.open .line-menu {
+  &.start {
+    transform: rotate(-90deg) translateX(3px);
+  }
+  & .end {
+    transform: rotate(-90deg) translateX(-3px);
+  }
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  padding: 5rem 1.25rem;
+  overflow: hidden;
+  .title-lt {
+    position: absolute;
+    top: 90px;
+    left: -20px;
+    opacity: 0;
+    transition: all 1s;
+    @media (max-width: 1024px) {
+      width: 30%;
+      top: 80px;
+      left: -10px;
+    }
+  }
+  .circle {
+    width: 273px;
+    height: 273px;
+    position: absolute;
+    top: 30px;
+    left: -270px;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: all 1s;
+    @media (max-width: 1024px) {
+      width: 200px;
+      height: 200px;
+      top: 50px;
+      left: -200px;
+    }
+  }
+
+  b {
+    display: block;
+    margin-bottom: 1%;
+  }
+  h2 {
+    position: absolute;
+    top: 160px;
+    left: -10px;
+    font-size: 70px;
+    opacity: 0;
+    transition: all 1s;
+    @media (max-width: 1024px) {
+      top: 140px;
+      left: -8px;
+      font-size: 50px;
+    }
+  }
+  .desc {
+    position: relative;
+    margin-top: 20%;
+    margin-left: 8%;
+    z-index: 5;
+
+    a {
+      display: block;
+      width: 250px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-weight: 600;
+      border-radius: 50px;
+      box-shadow: 2px 2px 6px #aaa;
+      transition: all 0.2s;
+      &:hover {
+        box-shadow: none;
+        transform: translateY(2px);
+      }
+      @media (max-width: 1024px) {
+        width: 220px;
+      }
+    }
+  }
+
+  img:last-child {
+    position: absolute;
+    opacity: 0;
+    transition: all 2s;
+    z-index: 3;
+  }
+}
+
+// 홈
+#home {
+  .title {
+    position: absolute;
+    bottom: 5rem;
+    left: 1.25rem;
+    font-size: 5rem;
+  }
+
+  span {
+    position: absolute;
+    top: 5rem;
+    right: 1.25rem;
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: right;
+    color: #ddd;
+  }
+}
+
+// 어바웃미
+#aboutme {
+  background-color: #f9f9f9;
+  .d-flex {
+    justify-content: center;
+    align-items: flex-start;
+    .photo {
+      width: 20rem;
+      border-radius: 15px;
+    }
+    .txt {
+      margin-left: 1.875rem;
+      line-height: 1.7;
+    }
+  }
+
+  .skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 3.125rem;
+    line-height: 1.7;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.null {
+  .title-lt {
+    top: 65px;
+  }
+  .circle {
+    background: rgb(255, 193, 193);
+  }
+  .photo {
+    width: 20rem;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    border-radius: 15px;
+  }
+  .text {
+    width: 45%;
+    margin-left: 50%;
+    h5 {
+      font-size: 30px;
+      &:nth-child(2) {
+        margin-bottom: 5%;
+      }
+    }
+
+    > div {
+      width: 40%;
+      float: left;
+      margin-bottom: 5%;
+      margin-right: 10%;
+    }
+    span {
+      font-weight: 600;
+      line-height: 50px;
+    }
+    p {
+      line-height: 30px;
+    }
+  }
+
+  .skills {
+    div {
+      overflow: hidden;
+      margin-bottom: 3%;
+
+      p {
+        &:first-child {
+          width: 100%;
+          line-height: 16px;
+          margin-bottom: 5px;
+
+          div {
+            width: 80%;
+            height: 16px;
+            float: left;
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid #333;
+
+            div {
+              width: 0%;
+              height: 10px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 15px;
+              background: #333;
+              margin: 2px;
+              transition: all 2s;
+            }
+          }
+        }
+        &:last-child {
+          float: left;
+          width: 5%;
+          line-height: 16px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+#bifan {
+  .circle {
+    background: #0c2046;
+  }
+  h2 {
+    color: #0c2046;
+  }
+  .txt p {
+    margin-bottom: 3%;
+    line-height: 30px;
+  }
+  .txt a {
+    border: 2px solid #0c2046;
+    color: #0c2046;
+  }
+  .txt a:hover {
+    background: #0c2046;
+    color: #fff;
+  }
+  img:last-child {
+    top: -60%;
+    right: -10%;
+  }
+}
+
+#hotel {
+  .circle {
+    background: #000;
+  }
+  h2 {
+    color: #000;
+  }
+  .txt p {
+    margin-bottom: 3%;
+    line-height: 30px;
+  }
+  .txt a {
+    border: 2px solid #000;
+    color: #000;
+  }
+  .txt a:hover {
+    background: #000;
+    color: #fff;
+  }
+  img:last-child {
+    width: 65%;
+    top: 30%;
+    right: -5%;
+  }
+}
+
+#coucou {
+  .circle {
+    background: #96bccc;
+  }
+  h2 {
+    color: #dde7eb;
+  }
+  .txt p {
+    margin-bottom: 3%;
+    line-height: 30px;
+  }
+  .txt a {
+    border: 2px solid #96bccc;
+    color: #96bccc;
+  }
+  .txt a:hover {
+    background: #96bccc;
+    color: #fff;
+  }
+  img:last-child {
+    width: 95%;
+    top: -5%;
+    right: -50%;
+  }
+}
+
+#haneul {
+  .circle {
+    background: #3e8fc6;
+  }
+  h2 {
+    color: #3e8fc6;
+  }
+  .txt p {
+    margin-bottom: 3%;
+    line-height: 30px;
+  }
+  .txt a {
+    border: 2px solid #3e8fc6;
+    color: #3e8fc6;
+  }
+  .txt a:hover {
+    background: #3e8fc6;
+    color: #fff;
+  }
+  img:last-child {
+    width: 45%;
+    top: 15%;
+    right: 10%;
+  }
+}
+
+#innisfree {
+  .circle {
+    background: #3c7142;
+  }
+  h2 {
+    color: #3c7142;
+  }
+  .txt p {
+    margin-bottom: 3%;
+    line-height: 30px;
+  }
+  .txt a {
+    border: 2px solid #3c7142;
+    color: #3c7142;
+  }
+  .txt a:hover {
+    background: #3c7142;
+    color: #fff;
+  }
+  img:last-child {
+    width: 65%;
+    top: -10%;
+    right: -10%;
+  }
+}
+
+#today {
+  .circle {
+    background: #ff9b87;
+  }
+  h2 {
+    color: #ff9b87;
+  }
+  .txt p {
+    margin-bottom: 3%;
+    line-height: 30px;
+  }
+  .txt a {
+    border: 2px solid #ff9b87;
+    color: #ff9b87;
+  }
+  .txt a:hover {
+    background: #ff9b87;
+    color: #fff;
+  }
+  img:last-child {
+    width: 65%;
+    top: 0%;
+    right: -15%;
+  }
+}
+
+#contact .circle {
+  background: #000;
+}
+.contxt {
+  width: 50%;
+  height: 100%;
+  margin-left: 50%;
+  position: relative;
+}
+.contxt p {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  font-size: 80px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.contxt span {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+  font-size: 50px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+#popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  .popupbox {
+    width: 1100px;
+    height: 90%;
+    margin: 3% 20%;
+    position: relative;
+    background: #fff;
+    border: 2px solid #aaa;
+    box-shadow: 2px 2px 10px #aaa;
+  }
+  .popupcont {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    a {
+      position: absolute;
+      top: 3%;
+      right: 3%;
+      font-size: 30px;
+      font-weight: 700;
+      z-index: 2;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  width: 13px;
+  height: 16px;
+  background: #eee;
+}
+
+@media all and (max-width: 1440px) {
+  header ul {
+    margin-left: 65%;
+  }
+  #bifan img:last-child {
+    top: -60%;
+    right: -10%;
+  }
+}
+
+@media (max-width: 1024px) {
+  #aboutme .photo {
+    display: none;
+  }
+  #aboutme .text {
+    width: 60%;
+    margin-left: 35%;
+    margin-top: 25%;
+  }
+
+  #bifan .txt {
+    margin-top: 25%;
+  }
+  #bifan img:last-child {
+    width: 70%;
+    top: -20%;
+    right: -10%;
+  }
+
+  #hotel .txt {
+    margin-top: 48%;
+    margin-left: 18%;
+  }
+  #hotel .txt p:nth-child(2) {
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+  }
+  #hotel .txt p:nth-child(3) {
+    width: 50%;
+    float: left;
+  }
+  #hotel .txt a {
+    float: left;
+    margin-left: 23%;
+  }
+  #hotel img:last-child {
+    width: 100%;
+    top: 28%;
+    right: -10%;
+    padding: 0 20%;
+  }
+
+  #coucou .txt {
+    margin-top: 28%;
+  }
+  #coucou img:last-child {
+    width: 90%;
+    top: 0%;
+    right: -30%;
+  }
+
+  #haneul .txt {
+    margin-top: 48%;
+    margin-left: 18%;
+  }
+  #haneul .txt p:nth-child(2) {
+    width: 25%;
+    float: left;
+    margin-right: 0%;
+  }
+  #haneul .txt p:nth-child(3) {
+    width: 60%;
+    float: left;
+  }
+  #haneul .txt a {
+    float: left;
+    margin-left: 23%;
+  }
+  #haneul img:last-child {
+    width: 100%;
+    top: 20%;
+    right: -10%;
+    padding: 0 30%;
+  }
+
+  #innisfree .txt {
+    margin-top: 28%;
+  }
+  #innisfree img:last-child {
+    width: 60%;
+    top: 10%;
+    right: -10%;
+  }
+
+  #today .txt {
+    margin-top: 28%;
+  }
+  #today img:last-child {
+    width: 70%;
+    top: 15%;
+    right: -25%;
+  }
+
+  .contxt {
+    margin-left: 45%;
+  }
+  .contxt p {
+    font-size: 60px;
+  }
+  .contxt span {
+    font-size: 40px;
+  }
+
+  #popup .popupbox {
+    width: 80%;
+    margin: 5% 10%;
+  }
+  #popup .popupbox a {
+    font-size: 25px;
+  }
+  #popup .popupbox div img {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  header ul {
+    margin-left: 45%;
+  }
+
+  #aboutme .text {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40%;
+  }
+
+  #bifan .txt {
+    margin-top: 90%;
+    margin-left: 10%;
+  }
+  #bifan .txt p {
+    margin-bottom: 5%;
+  }
+  #bifan .txt p:nth-child(2) {
+    width: 35%;
+    float: left;
+    margin-right: 3%;
+  }
+  #bifan .txt p:nth-child(3) {
+    width: 60%;
+    float: left;
+  }
+  #bifan .txt a {
+    float: left;
+    margin-left: 25%;
+  }
+  #bifan img:last-child {
+    width: 100%;
+    top: 20%;
+    right: -10%;
+  }
+
+  #hotel .txt {
+    margin-top: 90%;
+    margin-left: 10%;
+  }
+  #hotel .txt p {
+    margin-bottom: 5%;
+  }
+  #hotel .txt p:nth-child(2) {
+    width: 35%;
+    float: left;
+    margin-right: 3%;
+  }
+  #hotel .txt p:nth-child(3) {
+    width: 60%;
+    float: left;
+  }
+  #hotel .txt a {
+    float: left;
+    margin-left: 25%;
+  }
+  #hotel img:last-child {
+    width: 100%;
+    top: 30%;
+    right: -10%;
+    padding: 0 5%;
+  }
+
+  #coucou .txt {
+    margin-top: 90%;
+    margin-left: 10%;
+  }
+  #coucou .txt p {
+    margin-bottom: 5%;
+  }
+  #coucou .txt p:nth-child(2) {
+    width: 35%;
+    float: left;
+    margin-right: 0%;
+  }
+  #coucou .txt p:nth-child(3) {
+    width: 60%;
+    float: left;
+  }
+  #coucou .txt a {
+    float: left;
+    margin-left: 25%;
+  }
+  #coucou img:last-child {
+    transform: rotate(34deg);
+    width: 100%;
+    top: 18%;
+    right: -10%;
+    padding: 0 15%;
+  }
+
+  #haneul .txt {
+    margin-top: 90%;
+    margin-left: 10%;
+  }
+  #haneul .txt p {
+    margin-bottom: 5%;
+  }
+  #haneul .txt p:nth-child(2) {
+    width: 30%;
+    float: left;
+    margin-right: 0;
+  }
+  #haneul .txt p:nth-child(3) {
+    width: 65%;
+    float: left;
+  }
+  #haneul .txt a {
+    float: left;
+    margin-left: 25%;
+  }
+  #haneul img:last-child {
+    width: 100%;
+    top: 23%;
+    right: -10%;
+    padding: 0 15%;
+  }
+
+  #innisfree .txt {
+    margin-top: 90%;
+    margin-left: 10%;
+  }
+  #innisfree .txt p {
+    margin-bottom: 5%;
+  }
+  #innisfree .txt p:nth-child(2) {
+    width: 30%;
+    float: left;
+    margin-right: 0;
+  }
+  #innisfree .txt p:nth-child(3) {
+    width: 65%;
+    float: left;
+  }
+  #innisfree .txt a {
+    float: left;
+    margin-left: 25%;
+  }
+  #innisfree img:last-child {
+    width: 100%;
+    top: 21%;
+    right: -10%;
+    padding: 0 20%;
+  }
+
+  #today .txt {
+    margin-top: 90%;
+    margin-left: 8%;
+  }
+  #today .txt p {
+    margin-bottom: 5%;
+  }
+  #today .txt p:nth-child(2) {
+    width: 30%;
+    float: left;
+    margin-right: 0;
+  }
+  #today .txt p:nth-child(3) {
+    width: 68%;
+    float: left;
+  }
+  #today .txt a {
+    float: left;
+    margin-left: 25%;
+  }
+  #today img:last-child {
+    width: 100%;
+    top: 21%;
+    right: -10%;
+    padding: 0 15%;
+  }
+
+  .contxt {
+    width: 65%;
+    margin-left: 30%;
+  }
+  .contxt p {
+    left: 0%;
+  }
+  .contxt span {
+    top: 52%;
+    left: 0%;
+  }
+
+  #popup .popupbox {
+    height: 80%;
+    margin: 10%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  header {
+    width: 100%;
+    height: 180px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    box-shadow: 0px 1px 5px #aaa;
+    display: none;
+  }
+  header ul {
+    margin-left: 0%;
+    display: none;
+  }
+  header ul li {
+    width: 100%;
+    margin: 0%;
+  }
+  header ul li a {
+    line-height: 50px;
+  }
+  header:hover {
+    height: 180px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  header ul li a:hover,
+  header ul li a.on {
+    color: #000;
+    opacity: 1;
+  }
+  .wrapper-menu {
+    display: flex;
+  }
+
+  section {
+    height: auto;
+  }
+  section .title-lt {
+    width: 40%;
+    top: 60px;
+  }
+  section .circle {
+    width: 150px;
+    height: 150px;
+    top: 30px;
+    left: -150px;
+  }
+  section h2 {
+    top: 100px;
+    font-size: 33px;
+  }
+  section .txt a {
+    width: 190px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    transform: translateY(-5px);
+    margin-top: 5%;
+  }
+  section .txt b,
+  section .txt p {
+    font-size: 13px;
+  }
+
+  #aboutme .text {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 50%;
+  }
+  .text > div {
+    width: 90%;
+    margin-right: 2%;
+    margin-bottom: 0%;
+    font-size: 13px;
+  }
+  .text h5:nth-child(2) {
+    margin-bottom: 0%;
+  }
+  .text > div:nth-child(3) {
+    width: 45%;
+  }
+  .text > div:nth-child(4) {
+    width: 45%;
+  }
+  .skills div {
+    margin-bottom: 0%;
+  }
+
+  #bifan .txt {
+    width: 85%;
+    margin-top: 90%;
+    margin-left: 5%;
+  }
+  #bifan .txt p:nth-child(2) {
+    width: 90%;
+    float: none;
+    margin-right: 0%;
+  }
+  #bifan .txt p:nth-child(3) {
+    width: 100%;
+    float: none;
+  }
+  #bifan .txt a {
+    margin-left: 22%;
+  }
+  #bifan img:last-child {
+    width: 100%;
+    top: 15%;
+    right: 0%;
+  }
+
+  #hotel .txt {
+    margin-top: 90%;
+    margin-left: 5%;
+  }
+  #hotel .txt p:nth-child(2) {
+    width: 90%;
+    float: none;
+    margin-right: 0%;
+  }
+  #hotel .txt p:nth-child(3) {
+    width: 90%;
+    float: none;
+  }
+  #hotel .txt a {
+    margin-left: 22%;
+  }
+  #hotel img:last-child {
+    width: 100%;
+    top: 25%;
+    right: 0%;
+  }
+
+  #coucou .txt {
+    width: 85%;
+    margin-top: 90%;
+    margin-left: 5%;
+  }
+  #coucou .txt p:nth-child(2) {
+    width: 90%;
+    float: none;
+    margin-right: 0%;
+  }
+  #coucou .txt p:nth-child(3) {
+    width: 100%;
+    float: none;
+  }
+  #coucou .txt a {
+    margin-left: 22%;
+  }
+  #coucou img:last-child {
+    transform: rotate(34deg);
+    width: 100%;
+    top: 15%;
+    right: 0%;
+  }
+
+  #haneul .txt {
+    margin-top: 105%;
+    margin-left: 5%;
+  }
+  #haneul .txt p:nth-child(2) {
+    width: 90%;
+    float: none;
+    margin-right: 0%;
+  }
+  #haneul .txt p:nth-child(3) {
+    width: 100%;
+    float: none;
+  }
+  #haneul .txt a {
+    margin-left: 22%;
+  }
+  #haneul img:last-child {
+    width: 100%;
+    top: 22%;
+    right: 0%;
+  }
+
+  #innisfree .txt {
+    width: 90%;
+    margin-top: 110%;
+    margin-left: 5%;
+  }
+  #innisfree .txt p:nth-child(2) {
+    width: 90%;
+    float: none;
+    margin-right: 0%;
+  }
+  #innisfree .txt p:nth-child(3) {
+    width: 90%;
+    float: none;
+  }
+  #innisfree .txt a {
+    margin-left: 22%;
+  }
+  #innisfree img:last-child {
+    width: 100%;
+    top: 23%;
+    right: 0%;
+  }
+
+  #today .txt {
+    width: 85%;
+    margin-top: 110%;
+    margin-left: 5%;
+  }
+  #today .txt p:nth-child(2) {
+    width: 90%;
+    float: none;
+    margin-right: 0%;
+  }
+  #today .txt p:nth-child(3) {
+    width: 100%;
+    float: none;
+  }
+  #today .txt a {
+    margin-left: 22%;
+  }
+  #today img:last-child {
+    width: 100%;
+    top: 23%;
+    right: 0%;
+  }
+
+  #popup .popupbox {
+    height: 60%;
+    margin: 20% 10%;
+  }
+  #popup .popupbox a {
+    font-size: 20px;
+  }
+
+  .contxt {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .contxt p {
+    font-size: 45px;
+  }
+  .contxt span {
+    font-size: 25px;
+  }
+}
