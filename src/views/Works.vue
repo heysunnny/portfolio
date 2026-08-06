@@ -1,14 +1,19 @@
 <template>
   <section id="works">
-    <h2>WORKS</h2>
+    <h2 class="sec-title">WORKS</h2>
     <ul>
-      <li>AIDT 교육자료</li>
+      <li v-for="(work, index) in worksData" class="box">
+        <p class="box-title">{{ work.name }}</p>
+        <div>
+          <span v-for="item in work.skill">{{ item }}</span>
+        </div>
+      </li>
     </ul>
   </section>
 
   <section id="AIDT">
     <img :src="base + 'img/works.png'" alt="works" class="title" />
-    <h2>AIDT 교육자료</h2>
+    <h2 class="sec-title">AIDT 교육자료</h2>
     <div class="circle bifan"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -34,7 +39,7 @@
 
   <section id="bifan">
     <img :src="base + 'img/works.png'" alt="works" class="title" />
-    <h2>부천국제판타스틱영화제</h2>
+    <h2 class="sec-title">부천국제판타스틱영화제</h2>
     <div class="circle bifan"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -60,7 +65,7 @@
 
   <section id="hotel">
     <img :src="base + 'img/works.png'" alt="works" class="title-lt" />
-    <h2>HOTEL ATLANTICA</h2>
+    <h2 class="sec-title">HOTEL ATLANTICA</h2>
     <div class="circle hotel"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -86,7 +91,7 @@
 
   <section id="coucou">
     <img :src="base + 'img/works.png'" alt="works" class="title-lt" />
-    <h2>CouCou</h2>
+    <h2 class="sec-title">CouCou</h2>
     <div class="circle coucou"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -111,7 +116,7 @@
 
   <section id="haneul">
     <img :src="base + 'img/works.png'" alt="works" class="title-lt" />
-    <h2>하늘병원</h2>
+    <h2 class="sec-title">하늘병원</h2>
     <div class="circle haneul"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -136,7 +141,7 @@
 
   <section id="innisfree">
     <img :src="base + 'img/works.png'" alt="works" class="title-lt" />
-    <h2>이니스프리 어플 리디자인</h2>
+    <h2 class="sec-title">이니스프리 어플 리디자인</h2>
     <div class="circle innisfree"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -158,7 +163,7 @@
 
   <section id="today">
     <img :src="base + 'img/works.png'" alt="works" class="title-lt" />
-    <h2>커뮤니케이션 어플:오늘하루</h2>
+    <h2 class="sec-title">커뮤니케이션 어플:오늘하루</h2>
     <div class="circle today"></div>
     <div class="desc">
       <b>ABOUT</b>
@@ -180,5 +185,24 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const base = import.meta.env.BASE_URL;
+
+const worksData = ref([
+  { name: "AIDT 교육자료", skill: ["Vue.js", "Scss", "접근성", "반응형"] },
+  { name: "디지털 교육 콘텐츠", skill: ["HTML", "CSS", "jQuery", "Bootstrap"] },
+  {
+    name: "유니클로 공식 온라인스토어 콘텐츠",
+    skill: ["HTML", "CSS", "jQuery", "적응형"],
+  },
+  {
+    name: "안국약품 추모관",
+    skill: ["HTML", "CSS", "jQuery", "Bootstrap", "반응형"],
+  },
+  {
+    name: "리디안의원",
+    skill: ["HTML", "CSS", "jQuery", "Bootstrap", "반응형"],
+  },
+]);
 </script>

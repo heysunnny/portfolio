@@ -1,0 +1,17 @@
+@mixin pc {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin tbl {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mb {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
